@@ -34,46 +34,50 @@ function Cart() {
 
         <div className="cards flex justify-between">
           <div className="cart flex flex-col gap-5">
-            {cart?.products?.map((item) => (
-              <div
-                className="cart-item w-[814px] flex justify-between"
-                key={item.id}
-              >
-                <img
-                  className="w-[128px] h-[128px] border-2 rounded-lg"
-                  src={item.images[0]}
-                  alt={item.title}
-                />
-                <div className="details w-[150px] text-left flex flex-col">
-                  <h3 className="text-md mb-5">{item.title}</h3>
-                  <p className="text-sm text-slate-500">
-                    Category: {item.category}
-                  </p>
-                </div>
-                <div className="amount text-center flex flex-col gap-3">
-                  <p>Amount</p>
-                  <input
-                    type="number"
-                    min={1}
-                    max={item.stock}
-                    className="input input-bordered"
-                    value={quantities[item.id]}
-                    onChange={(e) =>
-                      handleQuantityChange(item.id, parseInt(e.target.value))
-                    }
+            {cart.products.length ? (
+              cart?.products?.map((item) => (
+                <div
+                  className="cart-item w-[814px] flex justify-between"
+                  key={item.id}
+                >
+                  <img
+                    className="w-[128px] h-[128px] border-2 rounded-lg"
+                    src={item.images[0]}
+                    alt={item.title}
                   />
-                  <a
-                    className="cursor-pointer text-cyan-400"
-                    onClick={() => dispatch(deleteToCart(item))}
-                  >
-                    Remove
-                  </a>
+                  <div className="details w-[150px] text-left flex flex-col">
+                    <h3 className="text-md mb-5">{item.title}</h3>
+                    <p className="text-sm text-slate-500">
+                      Category: {item.category}
+                    </p>
+                  </div>
+                  <div className="amount text-center flex flex-col gap-3">
+                    <p>Amount</p>
+                    <input
+                      type="number"
+                      min={1}
+                      max={item.stock}
+                      className="input input-bordered"
+                      value={quantities[item.id]}
+                      onChange={(e) =>
+                        handleQuantityChange(item.id, parseInt(e.target.value))
+                      }
+                    />
+                    <a
+                      className="cursor-pointer text-cyan-400"
+                      onClick={() => dispatch(deleteToCart(item))}
+                    >
+                      Remove
+                    </a>
+                  </div>
+                  <div className="price">
+                    <p>{Math.floor(quantities[item.id] * item.price)} $</p>
+                  </div>
                 </div>
-                <div className="price">
-                  <p>{Math.floor(quantities[item.id] * item.price)} $</p>
-                </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p className="text-center text-2xl">Cart is empty 😥 !</p>
+            )}
           </div>
           <div className="total flex flex-col items-center">
             <div className="total_price p-8 flex flex-col gap-5 b-radius-lg rounded-md h-[250px]">
