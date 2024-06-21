@@ -128,6 +128,9 @@ function Login() {
       <button type="submit" className="btn btn-primary">
         Login
       </button>
+      <button onClick={() => navigate("/")} className="btn btn-accent">
+        Guest user
+      </button>
       <p className="text-center">
         Don't have an account?{" "}
         <Link className="link text-primary" to="/signup">
