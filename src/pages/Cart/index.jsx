@@ -25,7 +25,6 @@ function Cart() {
     return acc;
   }, 0);
   console.log(totalprice);
-
   return (
     <section>
       <div className="container">
