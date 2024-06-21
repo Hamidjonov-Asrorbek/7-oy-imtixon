@@ -25,9 +25,6 @@ function Cart() {
     return acc;
   }, 0);
   console.log(totalprice);
-  const handleRemove = (id) => {
-    // Implement remove functionality based on your requirements
-  };
 
   return (
     <section>
