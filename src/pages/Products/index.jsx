@@ -77,12 +77,12 @@ function Products() {
               <option value="name">A-Z</option>
               <option value="!name">Z-A</option>
             </select>
-            <button
+            {/* <button
               onClick={() => document.getElementById("my_modal_3").showModal()}
               className="btn btn-outline btn-md"
             >
               Add
-            </button>
+            </button> */}
           </div>
         </div>
         <div>
