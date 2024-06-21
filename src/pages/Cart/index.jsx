@@ -114,5 +114,4 @@ function Cart() {
     </section>
   );
 }
-
 export default Cart;

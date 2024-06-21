@@ -40,3 +40,7 @@
     padding: 0 20px;
   }
 }
+
+.nav__link.active {
+  border: 2px solid #7875b5;
+}

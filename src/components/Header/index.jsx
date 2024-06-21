@@ -85,13 +85,13 @@ function Header() {
           </div>
         </div>
         <div className="navbar-center pages">
-          <NavLink to="/" className="btn btn-ghost text-xl">
+          <NavLink to="/" className="nav__link btn btn-ghost text-xl">
             Home
           </NavLink>
-          <NavLink to="/products" className="btn btn-ghost text-xl">
+          <NavLink to="/products" className="nav__link btn btn-ghost text-xl">
             Products
           </NavLink>
-          <NavLink to="/cart" className="btn btn-ghost text-xl">
+          <NavLink to="/cart" className="nav__link btn btn-ghost text-xl">
             Cart
           </NavLink>
         </div>
